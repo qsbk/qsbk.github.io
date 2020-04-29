@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>GitHub的常用命令 | Blog</title>
+  <title>系分第三章_操作系统基本原理 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="GitHub的常用命令每天使用Git，但是很多命令记不住。所以整理了常用的Git命令。几个专有名词译名如下:">
-<meta name="keywords" content="GitHub,笔记">
+  <meta name="description" content="第3章 操作系统基本原理&amp;emsp;&amp;emsp;操作系统是计算机系统中最重要、最基本的系统软件，它位于硬件和用户之间，向用户提供接口，方便用户使用计算机；且能够管理计算机软硬件资源。">
+<meta name="keywords" content="笔记,系统分析师教程">
 <meta property="og:type" content="article">
-<meta property="og:title" content="GitHub的常用命令">
-<meta property="og:url" content="&#x2F;posts&#x2F;undefined.html">
+<meta property="og:title" content="系分第三章_操作系统基本原理">
+<meta property="og:url" content="&#x2F;posts&#x2F;Operating_system_fundamentals.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="GitHub的常用命令每天使用Git，但是很多命令记不住。所以整理了常用的Git命令。几个专有名词译名如下:">
+<meta property="og:description" content="第3章 操作系统基本原理&amp;emsp;&amp;emsp;操作系统是计算机系统中最重要、最基本的系统软件，它位于硬件和用户之间，向用户提供接口，方便用户使用计算机；且能够管理计算机软硬件资源。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2019-11-22T04:59:56.673Z">
+<meta property="og:updated_time" content="2020-04-29T11:12:12.253Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -153,57 +153,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-GitHub的常用命令" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-系分第三章_操作系统基本原理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      GitHub的常用命令
+      系分第三章_操作系统基本原理
     </h1>
   
 
         
-        <a href="/posts/undefined.html" class="archive-article-date">
-  	<time datetime="2018-08-19T04:02:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-19</time>
+        <a href="/posts/Operating_system_fundamentals.html" class="archive-article-date">
+  	<time datetime="2019-11-25T10:58:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="GitHub的常用命令"><a href="#GitHub的常用命令" class="headerlink" title="GitHub的常用命令"></a>GitHub的常用命令</h1><p>每天使用Git，但是很多命令记不住。所以整理了常用的Git命令。几个专有名词译名如下:</p>
-<a id="more"></a>
-
-<ul>
-<li>Workspace: 工作区</li>
-<li>Index / Stage: 暂存区</li>
-<li>Reepository: 仓库区(或本地仓库)</li>
-<li>Remote: 远程仓库</li>
-</ul>
-<h3 id="一、新建代码库"><a href="#一、新建代码库" class="headerlink" title="一、新建代码库"></a>一、新建代码库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 在当前目录新建一个Git代码库</span><br><span class="line">$ git init</span><br><span class="line"></span><br><span class="line"># 新建一个目录，将其初始化为Git代码库</span><br><span class="line">$ git init [project-name]</span><br><span class="line"></span><br><span class="line"># 下载一个项目和它的整个代码历史</span><br><span class="line">$ git clone [url]</span><br></pre></td></tr></table></figure>
-
-<h3 id="二、配置"><a href="#二、配置" class="headerlink" title="二、配置"></a>二、配置</h3><p>Git的设置文件为<code>.gitconfig</code>，他可以在用户主目录下(全局配置)，也可以在项目目录下(项目配置)。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"># 显示当前的Git配置</span><br><span class="line">$ git config --list</span><br><span class="line"></span><br><span class="line"># 编辑Git配置文件</span><br><span class="line">$ git config -e [--global]</span><br><span class="line"></span><br><span class="line"># 设置提交代码时的用户信息</span><br><span class="line">$ git config [--global] user.name</span><br><span class="line">$ git config [--global] user.email</span><br></pre></td></tr></table></figure>
-
-<h3 id="三、添加-删除文件"><a href="#三、添加-删除文件" class="headerlink" title="三、添加/删除文件"></a>三、添加/删除文件</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"># 添加指定文件到暂存区</span><br><span class="line">$ git add [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># 添加指定目录到暂存区，包括子目录</span><br><span class="line">$ git add [dir]</span><br><span class="line"></span><br><span class="line"># 添加当前目录的所有文件到暂存区</span><br><span class="line">$ git add</span><br><span class="line"></span><br><span class="line"># 添加每个变化前，都会要求确认</span><br><span class="line"># 对于同一个文件的多处变化，可以实现分次提交</span><br><span class="line">$ git add -p</span><br><span class="line"></span><br><span class="line"># 删除工作区文件，并将这次删除放入暂存区</span><br><span class="line">$ git rm [file1] [file2] ...</span><br><span class="line"></span><br><span class="line"># 停止追踪指定文件，但该文件会保留在工作区</span><br><span class="line">$ git rm --cached [file]</span><br><span class="line"></span><br><span class="line"># 改名文件，并且将这个改动放入暂存区</span><br><span class="line">$ git mv [file-original] [file-renamed]</span><br></pre></td></tr></table></figure>
-
-<h3 id="四、代码提交"><a href="#四、代码提交" class="headerlink" title="四、代码提交"></a>四、代码提交</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"># 提交暂存区到仓库区</span><br><span class="line">$ git commit -m [message]</span><br><span class="line"></span><br><span class="line"># 提交暂存区的指定文件到仓库区</span><br><span class="line">$ git commit [file1] [file2] ... -m [message]</span><br><span class="line"></span><br><span class="line"># 提交工作区自上次commit之后的变化，直接到仓库区</span><br><span class="line">$ git commit -a</span><br><span class="line"></span><br><span class="line"># 提交时显示所有diff信息</span><br><span class="line">$ git commit -v</span><br><span class="line"></span><br><span class="line"># 使用一次新的commit，替代上一次提交</span><br><span class="line"># 如果代码没有任何新变化，则用来改写上一次commit的提交信息</span><br><span class="line">$ git commit --amend -m [message]</span><br><span class="line"></span><br><span class="line"># 重做上一次commit，并包括指定文件的新变化</span><br><span class="line">$ git commit --amend [file1] [file2] ...</span><br></pre></td></tr></table></figure>
-
-<h3 id="五、分支"><a href="#五、分支" class="headerlink" title="五、分支"></a>五、分支</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有本地分支</span><br><span class="line">$ git branch</span><br><span class="line"></span><br><span class="line"># 列出所有远程分支</span><br><span class="line">$ git branch -r</span><br><span class="line"></span><br><span class="line"># 列出所有本地分支和远程分支</span><br><span class="line">$ git branch -a</span><br><span class="line"></span><br><span class="line"># 新建一个分支，但依然停留在当前分支</span><br><span class="line">$ git branch [branch-name]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，并切换到该分支</span><br><span class="line">$ git checkout -b [branch]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向指定commit</span><br><span class="line">$ git branch [branch] [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个分支，与指定的远程分支建立追踪关系</span><br><span class="line">$ git branch --track [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 切换到指定分支，并更新工作区</span><br><span class="line">$ git checkout [branch-name]</span><br><span class="line"></span><br><span class="line"># 切换到上一个分支</span><br><span class="line">$ git checkout -</span><br><span class="line"></span><br><span class="line"># 建立追踪关系，在现有分支与指定的远程分支之间</span><br><span class="line">$ git branch --set-upstream [branch] [remote-branch]</span><br><span class="line"></span><br><span class="line"># 合并指定分支到当前分支</span><br><span class="line">$ git merge [branch]</span><br><span class="line"></span><br><span class="line"># 选择一个commit，合并进当前分支</span><br><span class="line">$ git cherry-pick [commit]</span><br><span class="line"></span><br><span class="line"># 删除分支</span><br><span class="line">$ git branch -d [branch-name]</span><br><span class="line"></span><br><span class="line"># 删除远程分支</span><br><span class="line">$ git push origin --delete [branch-name]</span><br><span class="line">$ git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
-
-<h3 id="六、标签"><a href="#六、标签" class="headerlink" title="六、标签"></a>六、标签</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"># 列出所有tag</span><br><span class="line">$ git tag</span><br><span class="line"></span><br><span class="line"># 新建一个tag在当前commit</span><br><span class="line">$ git tag [tag]</span><br><span class="line"></span><br><span class="line"># 新建一个tag在指定commit</span><br><span class="line">$ git tag [tag] [commit]</span><br><span class="line"></span><br><span class="line"># 删除本地tag</span><br><span class="line">$ git tag -d [tag]</span><br><span class="line"></span><br><span class="line"># 删除远程tag</span><br><span class="line">$ git push origin :refs/tags/[tagName]</span><br><span class="line"></span><br><span class="line"># 查看tag信息</span><br><span class="line">$ git show [tag]</span><br><span class="line"></span><br><span class="line"># 提交指定tag</span><br><span class="line">$ git push [remote] [tag]</span><br><span class="line"></span><br><span class="line"># 提交所有tag</span><br><span class="line">$ git push [remote] --tags</span><br><span class="line"></span><br><span class="line"># 新建一个分支，指向某个tag</span><br><span class="line">$ git checkout -b [branch] [tag]</span><br></pre></td></tr></table></figure>
-
-<h3 id="七、查看信息"><a href="#七、查看信息" class="headerlink" title="七、查看信息"></a>七、查看信息</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"># 显示有变更的文件</span><br><span class="line">$ git status</span><br><span class="line"></span><br><span class="line"># 显示当前分支的版本历史</span><br><span class="line">$ git log</span><br><span class="line"></span><br><span class="line"># 显示commit历史，以及每次commit发生变更的文件</span><br><span class="line">$ git log --stat</span><br><span class="line"></span><br><span class="line"># 搜索提交历史，根据关键词</span><br><span class="line">$ git log -S [keyword]</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，每个commit占据一行</span><br><span class="line">$ git log [tag] HEAD --pretty=format:%s</span><br><span class="line"></span><br><span class="line"># 显示某个commit之后的所有变动，其&quot;提交说明&quot;必须符合搜索条件</span><br><span class="line">$ git log [tag] HEAD --grep feature</span><br><span class="line"></span><br><span class="line"># 显示某个文件的版本历史，包括文件改名</span><br><span class="line">$ git log --follow [file]</span><br><span class="line">$ git whatchanged [file]</span><br><span class="line"></span><br><span class="line"># 显示指定文件相关的每一次diff</span><br><span class="line">$ git log -p [file]</span><br><span class="line"></span><br><span class="line"># 显示过去5次提交</span><br><span class="line">$ git log -5 --pretty --oneline</span><br><span class="line"></span><br><span class="line"># 显示所有提交过的用户，按提交次数排序</span><br><span class="line">$ git shortlog -sn</span><br><span class="line"></span><br><span class="line"># 显示指定文件是什么人在什么时间修改过</span><br><span class="line">$ git blame [file]</span><br><span class="line"></span><br><span class="line"># 显示暂存区和工作区的差异</span><br><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line"># 显示暂存区和上一个commit的差异</span><br><span class="line">$ git diff --cached [file]</span><br><span class="line"></span><br><span class="line"># 显示工作区与当前分支最新commit之间的差异</span><br><span class="line">$ git diff HEAD</span><br><span class="line"></span><br><span class="line"># 显示两次提交之间的差异</span><br><span class="line">$ git diff [first-branch]...[second-branch]</span><br><span class="line"></span><br><span class="line"># 显示今天你写了多少行代码</span><br><span class="line">$ git diff --shortstat &quot;@&#123;0 day ago&#125;&quot;</span><br><span class="line"></span><br><span class="line"># 显示某次提交的元数据和内容变化</span><br><span class="line">$ git show [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交发生变化的文件</span><br><span class="line">$ git show --name-only [commit]</span><br><span class="line"></span><br><span class="line"># 显示某次提交时，某个文件的内容</span><br><span class="line">$ git show [commit]:[filename]</span><br><span class="line"></span><br><span class="line"># 显示当前分支的最近几次提交</span><br><span class="line">$ git reflog</span><br></pre></td></tr></table></figure>
-
-<h3 id="八、远程同步"><a href="#八、远程同步" class="headerlink" title="八、远程同步"></a>八、远程同步</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"># 下载远程仓库的所有变动</span><br><span class="line">$ git fetch [remote]</span><br><span class="line"></span><br><span class="line"># 显示所有远程仓库</span><br><span class="line">$ git remote -v</span><br><span class="line"></span><br><span class="line"># 显示某个远程仓库的信息</span><br><span class="line">$ git remote show [remote]</span><br><span class="line"></span><br><span class="line"># 增加一个新的远程仓库，并命名</span><br><span class="line">$ git remote add [shortname] [url]</span><br><span class="line"></span><br><span class="line"># 取回远程仓库的变化，并与本地分支合并</span><br><span class="line">$ git pull [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 上传本地指定分支到远程仓库</span><br><span class="line">$ git push [remote] [branch]</span><br><span class="line"></span><br><span class="line"># 强行推送当前分支到远程仓库，即使有冲突</span><br><span class="line">$ git push [remote] --force</span><br><span class="line"></span><br><span class="line"># 推送所有分支到远程仓库</span><br><span class="line">$ git push [remote] --all</span><br></pre></td></tr></table></figure>
-
-<h3 id="九、撤销"><a href="#九、撤销" class="headerlink" title="九、撤销"></a>九、撤销</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"># 恢复暂存区的指定文件到工作区</span><br><span class="line">$ git checkout [file]</span><br><span class="line"></span><br><span class="line"># 恢复某个commit的指定文件到暂存区和工作区</span><br><span class="line">$ git checkout [commit] [file]</span><br><span class="line"></span><br><span class="line"># 恢复暂存区的所有文件到工作区</span><br><span class="line">$ git checkout .</span><br><span class="line"></span><br><span class="line"># 重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</span><br><span class="line">$ git reset [file]</span><br><span class="line"></span><br><span class="line"># 重置暂存区与工作区，与上一次commit保持一致</span><br><span class="line">$ git reset --hard</span><br><span class="line"></span><br><span class="line"># 重置当前分支的指针为指定commit，同时重置暂存区，但工作区不变</span><br><span class="line">$ git reset [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前分支的HEAD为指定commit，同时重置暂存区和工作区，与指定commit一致</span><br><span class="line">$ git reset --hard [commit]</span><br><span class="line"></span><br><span class="line"># 重置当前HEAD为指定commit，但保持暂存区和工作区不变</span><br><span class="line">$ git reset --keep [commit]</span><br><span class="line"></span><br><span class="line"># 新建一个commit，用来撤销指定commit</span><br><span class="line"># 后者的所有变化都将被前者抵消，并且应用到当前分支</span><br><span class="line">$ git revert [commit]</span><br><span class="line"></span><br><span class="line"># 暂时将未提交的变化移除，稍后再移入</span><br><span class="line">$ git stash$ git stash pop</span><br></pre></td></tr></table></figure>
-
-<h3 id="十、其他"><a href="#十、其他" class="headerlink" title="十、其他"></a>十、其他</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 生成一个可供发布的压缩包</span><br><span class="line">$ git archive</span><br></pre></td></tr></table></figure>
-
-<p>end</p>
+        <h1 id="第3章-操作系统基本原理"><a href="#第3章-操作系统基本原理" class="headerlink" title="第3章 操作系统基本原理"></a>第3章 操作系统基本原理</h1><p>&emsp;&emsp;操作系统是计算机系统中最重要、最基本的系统软件，它位于<strong>硬件</strong>和<strong>用户</strong>之间，向用户提供<strong>接口</strong>，方便用户使用计算机；且能够<strong>管理计算机软硬件资源</strong>。<a id="more"></a>从资源管理的角度来看，操作系统是计算机系统中的<strong>资源管理器</strong>，负责对系统的软硬件资源实施有效的<strong>控制</strong>和<strong>管理</strong>，提高系统资源的利用率；从方便用户使用的角度来看，操作系统是一台虚拟机，它是计算机硬件的首次可扩充，隐藏了硬件操作的细节，使用户与硬件细节隔离，从而方便了用户使用。</p>
+<h4 id="3-1-操作系统概述"><a href="#3-1-操作系统概述" class="headerlink" title="3.1  操作系统概述"></a>3.1  操作系统概述</h4><p>&emsp;&emsp;操作系统：操作系统是控制和管理计算机软硬件资源 ，以尽可能合理、有效的方法<strong>组织多个用户共享多种资源的的程序集合</strong>。它具有：</p>
+<p>&emsp;&emsp;1. 并发性</p>
+<p>&emsp;&emsp;2. 共享性</p>
+<p>&emsp;&emsp;3. 虚拟性</p>
+<p>&emsp;&emsp;4. 不确定性</p>
+<p><strong>操作系统的主要功能</strong></p>
+<p>&emsp;&emsp;1） 处理机管理。负责对处理机的<strong>分配</strong>和<strong>运行</strong>实施有效的管理(以<strong>进程</strong>为单位)。处理机管理可归结为<strong>进程管理。</strong></p>
+<p>&emsp;&emsp;2） 存储器管理。主要任务是堆内存进行<strong>分配</strong>、<strong>保护</strong>和<strong>扩充</strong>。</p>
+<p>&emsp;&emsp;3） 设备管理。具有<strong>设备分配</strong>、<strong>设备传输控制</strong>和<strong>设备独立性</strong>等功能。</p>
+<p>&emsp;&emsp;&emsp;&emsp;<1>&nbsp;设备分配是指根据一定的原则对设备进行分配，为了使设备与主机并行工作，常采用<strong>缓冲技术</strong>和<strong>虚拟现实</strong>技术。</p>
+<p>&emsp;&emsp;&emsp;&emsp;<1>&nbsp;设备传输控制是指实现物理的输入输出(<strong>Input/Output，I/O</strong>)操作，即<strong>启动设备</strong>、<strong>中断处理</strong>、<strong>结束处理</strong>等。</p>
+<p>&emsp;&emsp;&emsp;&emsp;<1>&nbsp;设备独立性是指用户向系统申请的设备与实际操作的设备无关。</p>
+<p>&emsp;&emsp;4） 文件管理。负责对文件存储空间进行管理，包括存储空间的<strong>分配</strong>和<strong>回收</strong>，<strong>目录管理</strong>、<strong>文件操作管理</strong>和<strong>文件保护</strong>等功能。</p>
+<p>&emsp;&emsp;5） 用户接口。是<strong>为了用户能够灵活、方便的使用计算机和系统功能</strong>。它包括两大类，分别是<strong>程序接口</strong>和<strong>操作接口</strong>。</p>
+<h4 id="3-1-1-操作系统的类型"><a href="#3-1-1-操作系统的类型" class="headerlink" title="3.1.1  操作系统的类型"></a>3.1.1  操作系统的类型</h4><p>&emsp;&emsp;一般来说，操作系统可分为<strong>单用户操作系统</strong>、<strong>批处理系统</strong>、<strong>分时系统</strong>、<strong>实时系统</strong>、<strong>网络操作系统</strong>、<strong>分布式操作系统</strong>、<strong>并行操作系统</strong>和<strong>嵌入式操作系统</strong>等。</p>
+<p>&emsp;&emsp;<strong>1. 单用户操作系统</strong></p>
+<p>&emsp;&emsp;基本特征是在一台处理机上<strong>只能支持一个用户程序的运行</strong>，系统的全部资源都提供给该用户使用。目前多数<strong>微机</strong>运行的操作系统都属于单用户操作系统。</p>
+<p>&emsp;&emsp;<strong>2. 批处理系统</strong>（也称<strong>作业处理系统</strong>）</p>
+<p>&emsp;&emsp;在批处理系统中，作业成批的装入计算机中，由操作系统在计算机的输入井将其组织好，按一定的算法选择其中的一个或多个作业，将其调入内存并使其运行。把结果放入磁盘输出井，由计算机统一输出后交给用户。</p>
+<p>&emsp;&emsp;批处理系统中配置了一个<strong>监督程序</strong>，在该监督程序控制下，系统能够对一批作业自动进行处理。其基本特征是<strong>“批量”</strong>，将作业的<strong>吞吐量作为主要目标</strong>，同时兼顾作业的<strong>周转时间</strong>。</p>
+<p>&emsp;&emsp;批处理系统又分<strong>单道批处理系统</strong>和<strong>多道批处理系统</strong>。</p>
+<p>&emsp;&emsp;单道批处理系统在内存中只能存放一道作业，大大<strong>减少了人工操作的时间</strong>，<strong>提高了机器的利用率</strong>。但是，对于某些作业来说，当它发出I/O请求后，中央处理单元(<strong>Central Processing Unit， CPU</strong>)必须等待I/O的完成，而由于I/O设备的低速性，从而使CPU的利用率很低。为了改善CUP的利用率，引入了<strong>多道程序设计技术</strong>，就形成了<strong>多道批处理操作系统</strong>。</p>
+<p>&emsp;&emsp;多道批处理操作系统中，内存中可同时有多道作业在运行，且作业可随时被调入系统，并存放在外存中形成作业队列。多道批处理系统具有<strong>资源利用率高</strong>和<strong>系统吞吐量大</strong>的优点，但它将用户和计算机操作员分开，使<strong>用户无法直接与自己的作业进行交互</strong>。另外，作业需要进行排队，依次处理，因此，<strong>作业的平均周转时间较长</strong>。</p>
+<p>&emsp;&emsp;<strong>3. 分时操作系统</strong></p>
+<p>&emsp;&emsp;分时操作系统是为了解决批处理系统的缺点（<strong>无法进行人机交互</strong>），并使多个用户能同时使用自己的终端以交互方式使用计算机，共享主机的资源，为此，系统采用了<strong>分时技术</strong>，把CPU的时间划分为很短的时间片，轮流地分配给各个终端作业使用。这种操作系统就被成为<strong>分时操作系统</strong>，简称为<strong>分时系统</strong>。</p>
+<p>&emsp;&emsp;在规定时间片内，作业没有执行完毕，，也必须将CPU交给下一个作业使用，并等待下一轮时间片继续执行。这样，系统才能够及时的响应每一个用户的请求。分时系统具有<strong>多路性</strong>、<strong>独立性</strong>、<strong>及时性</strong>、<strong>交互性</strong>和<strong>同时性</strong>等特征。</p>
+<p>&emsp;&emsp;<strong>4. 网络操作系统</strong></p>
+<p>&emsp;&emsp;是指在计算机网络环境下，具有网络功能的操作系统。网络操作系统最主要的特点是网络中<strong>各种资源的共享</strong>，以及<strong>各台计算机之间的通信</strong>。</p>
+<p>&emsp;&emsp;<strong>5.  分布式操作系统</strong></p>
+<p>&emsp;&emsp;分布式系统是由多台计算机组成的系统，系统中若干台计算机可以相互和做，共同完成同一个任务。在分布式系统中，任意两台计算机之间都可以利用通信交换信息，系统中的资源为所有用户共享。分布式系统的优点是<strong>各节点的自制性好</strong>、<strong>资源共享的透明性强</strong>、<strong>各节点具有协同性</strong>，其主要缺点是<strong>系统状态不精确</strong>、<strong>控制机构复杂</strong>、<strong>通信开销会引起性能下降</strong>。</p>
+<p>&emsp;&emsp;分布式操作系统是网络操作系统的更高级形式，他保持了网络操作系统所拥有的全部功能，与网络操作系统的主要区别在于任务的分布性，即把一个大人物分解为若干个子任务，并被分配到不同的CPU上执行。</p>
+<p>&emsp;&emsp;<strong>6. 嵌入式操作系统</strong></p>
+<p>&emsp;&emsp;嵌入式操作系统运行在<strong>嵌入式智能芯片</strong>环境中，对整个芯片和他所操作、控制的各种部件装置等资源进行<strong>统一协调</strong>、<strong>处理</strong>、<strong>指挥</strong>和<strong>控制</strong>。嵌入式操作系统具有<strong>微型化</strong>、<strong>可定制</strong>、<strong>实时性</strong>、<strong>可靠性</strong>、<strong>易移植性</strong>等特点。</p>
+<p>&emsp;&emsp;<strong>嵌入式实时操作系统</strong>是指系统能够及时响应外部事件的请求，在规定时间完成该事件的处理，控制所有史诗任务协调一致的运行。它的特点是<strong>及时性</strong>、<strong>支持多道程序设计</strong>、<strong>高可靠性和较强的过载防护能力</strong>。</p>
+<h3 id="3-1-2-操作系统的结构"><a href="#3-1-2-操作系统的结构" class="headerlink" title="3.1.2 操作系统的结构"></a>3.1.2 操作系统的结构</h3><p>&emsp;&emsp;从操作系统的结构来看，主要有<strong>整体结构</strong>、<strong>层次结构</strong>、<strong>客户/服务器结构</strong>和<strong>面向对象结构</strong>等。</p>
+<p>&emsp;&emsp;<strong>1. 整体结构</strong></p>
+<p>&emsp;&emsp;整体结构也称为<strong>模块组合结构</strong>或<strong>无序结构</strong>，是基于结构化程序设计的一种软件设计方法，其主要设计思想和步骤如下：</p>
+<p>&emsp;&emsp;1） 把模块作为操作系统的基本单位，按功能将系统分解为若干模块，每个模块具有独立功能，若干模块协作完成某个功能；明确各模块之间接口关系，各模块之间可以不加控制地自由调用（无序调用法）；模块之间传递参数或返回结果时，其个数和方式也可根据需要随意约定；</p>
+<p>&emsp;&emsp;2） 分别设计、编码、调试各个模块。</p>
+<p>&emsp;&emsp;3） 将所有模块连接成一个完整的系统。</p>
+<p>&emsp;&emsp;<strong>主要优点：</strong></p>
+<p>&emsp;&emsp;1）结构紧密、组合方便，灵活性大。</p>
+<p>&emsp;&emsp;2） 系统效率较高。</p>
+<p>&emsp;&emsp;3） 能加快操作系统研制过程。</p>
+<p>&emsp;&emsp;<strong>主要缺点：模块独立性差，模块之间牵连甚多，形成了复杂的调用关系，甚至有很多循环利用，造成系统结构不清晰，正确性难以保证，可靠性降低，系统功能的增、删、改十分困难。</strong></p>
+<p> &emsp;&emsp;<strong>2. 层次结构</strong></p>
+<p>&emsp;&emsp;层次结构将系统划分为<strong>内核</strong>和<strong>若干模块</strong>（或<strong>进程</strong>），模块按功能分层，各层之间只能是单向依赖或单项调用关系（底层为高层服务），使系统结构清晰不构成循环调用。层次结构有<strong>全序</strong>和<strong>半序</strong>之分。每层中各模块之间保持独立，互相没有联系，这种层次结构就称为全序；如果某些层内支架你允许有相互调用或通信的关系，则这种层次结构就称为半序；</p>
+<p>&emsp;&emsp;<strong>在层次结构中，外层功能是内层功能的扩充或延伸，内层功能为外层提供了支撑和基础。</strong>因此，整个系统的接口少且简单。整个系统的正确性和通过各层的正确性来保证，从而使系统的正确性大大提高。层次结构的另一个优点是增加、修改或替换一个层次不会影响其他层次，有利于系统的<strong>维护</strong>和<strong>扩展</strong>。<strong>层次结构的劣势是花费在通信上的开销较大，系统效率有所降低。</strong></p>
+<p>&emsp;&emsp;<strong>3. 客户/服务器结构</strong></p>
+<p>&emsp;&emsp;现代操作系统大多有两种工作状态（<strong>核心态和用户态</strong>）。一般应用程序工作在用户态，内核模块和操作系统核心在核心态。</p>
 
       
 
@@ -238,11 +258,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">GitHub</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">系统分析师教程</a>
         		</li>
       		
 		</ul>
@@ -298,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:/posts/undefined.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:/posts/Operating_system_fundamentals.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -312,15 +332,20 @@
   
 <nav id="article-nav">
   
-    <a href="/posts/undefined.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/posts/Android_RAM_And_Hook.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          系分第三章_操作系统基本原理
+          Android内存Hook及修改器原理
         
       </div>
     </a>
   
+  
+    <a href="/posts/github_base_command.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GitHub的常用命令</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -345,7 +370,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#GitHub的常用命令"><span class="toc-number">1.</span> <span class="toc-text">GitHub的常用命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、新建代码库"><span class="toc-number">1.0.1.</span> <span class="toc-text">一、新建代码库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、配置"><span class="toc-number">1.0.2.</span> <span class="toc-text">二、配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、添加-删除文件"><span class="toc-number">1.0.3.</span> <span class="toc-text">三、添加/删除文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#四、代码提交"><span class="toc-number">1.0.4.</span> <span class="toc-text">四、代码提交</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、分支"><span class="toc-number">1.0.5.</span> <span class="toc-text">五、分支</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、标签"><span class="toc-number">1.0.6.</span> <span class="toc-text">六、标签</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#七、查看信息"><span class="toc-number">1.0.7.</span> <span class="toc-text">七、查看信息</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#八、远程同步"><span class="toc-number">1.0.8.</span> <span class="toc-text">八、远程同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#九、撤销"><span class="toc-number">1.0.9.</span> <span class="toc-text">九、撤销</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#十、其他"><span class="toc-number">1.0.10.</span> <span class="toc-text">十、其他</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第3章-操作系统基本原理"><span class="toc-number">1.</span> <span class="toc-text">第3章 操作系统基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-操作系统概述"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">3.1  操作系统概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-操作系统的类型"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">3.1.1  操作系统的类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-操作系统的结构"><span class="toc-number">1.0.1.</span> <span class="toc-text">3.1.2 操作系统的结构</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
