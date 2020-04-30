@@ -6,23 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="">
-  <title>《数据结构与算法分析》第一章练习 | Blog</title>
+  <title>系分第三章_操作系统基本原理 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="练习1.1 编写一个程序解决选择问题。令k=N&#x2F;2。画出表格显示程序对N种不同的值的运行时间。 是我理解有问题吗，这题就是return N&#x2F;2 ？？？好吧看下一题">
-<meta name="keywords" content="算法,数据结构,练习">
+  <meta name="description" content="第3章 操作系统基本原理&amp;emsp;&amp;emsp;操作系统是计算机系统中最重要、最基本的系统软件，它位于硬件和用户之间，向用户提供接口，方便用户使用计算机；且能够管理计算机软硬件资源。">
+<meta name="keywords" content="系统分析师教程,笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《数据结构与算法分析》第一章练习">
-<meta property="og:url" content="&#x2F;posts&#x2F;data_structures_and_algorithm_analysis_in_java_1.html">
+<meta property="og:title" content="系分第三章_操作系统基本原理">
+<meta property="og:url" content="&#x2F;posts&#x2F;25721.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="练习1.1 编写一个程序解决选择问题。令k=N&#x2F;2。画出表格显示程序对N种不同的值的运行时间。 是我理解有问题吗，这题就是return N&#x2F;2 ？？？好吧看下一题">
+<meta property="og:description" content="第3章 操作系统基本原理&amp;emsp;&amp;emsp;操作系统是计算机系统中最重要、最基本的系统软件，它位于硬件和用户之间，向用户提供接口，方便用户使用计算机；且能够管理计算机软硬件资源。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;20190226185123727.jpg">
-<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;动态规划路径.PNG">
-<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;TIM图片20200429153320.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;排列组合树状图.png">
-<meta property="og:updated_time" content="2020-04-29T12:00:57.843Z">
+<meta property="og:updated_time" content="2020-04-29T11:19:54.975Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;20190226185123727.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -158,79 +153,77 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-《数据结构与算法分析》第一章练习" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-系分第三章_操作系统基本原理" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      《数据结构与算法分析》第一章练习
+      系分第三章_操作系统基本原理
     </h1>
   
 
         
-        <a href="/posts/data_structures_and_algorithm_analysis_in_java_1.html" class="archive-article-date">
-  	<time datetime="2020-04-28T07:52:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
+        <a href="/posts/25721.html" class="archive-article-date">
+  	<time datetime="2019-11-25T10:58:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="练习"><a href="#练习" class="headerlink" title="练习"></a>练习</h2><p><strong>1.1 编写一个程序解决选择问题。令<em>k=N/2</em>。画出表格显示程序对<em>N</em>种不同的值的运行时间。</strong></p>
-<p>是我理解有问题吗，这题就是<code>return N/2</code> ？？？好吧看下一题<a id="more"></a></p>
-<p><strong>1.2 编写一个程序求解字谜游戏问题。</strong></p>
-<p>起点在“从”字的格子里，可以横向或纵向走到相邻的格子里，但不能走到对角的格子或其它位置。一直要走到“华”字结束。</p>
-<p>要求走过的路线刚好构成“从我做起振兴中华”。一共有多少种可能的路线</p>
-<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/20190226185123727.jpg" alt=""></p>
-<p>这是一道2013年蓝桥杯JAVA B组的一个真题，以这个为例。先来分析一下，我们可以发现从起点开始只有向下和向右这两种方向才能组成“从我做起振兴中华”一共要走7步组成8个字，也就是说到达终点“华”字无论如何都需要向右走<strong><em>m-1</em></strong>步向下走<strong><em>n-1</em></strong>步（<strong>m = 5,n = 4</strong>），显然，这就是一个<strong>排列组合</strong>问题了，由排列数的计算公式：</p>
-<script type="math/tex; mode=display">
-A^m_n=n(n-1)(n-2)...(n-m+1)=\frac{n!}{(n-m)!}(m\leq n,m,n\in N^*)</script><p>得</p>
-<script type="math/tex; mode=display">
-A^{m-1}_{n+m-2}</script><p>因此我们只需要计算该公式就能得到正确结果。但是需要注意的是因为是阶乘运算，<code>remp</code> <code>result</code>很容易溢出。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kf</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m-<span class="number">1</span> ; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            temp *= i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &lt;= m + n - <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            result *= i;</span><br><span class="line">        &#125;</span><br><span class="line">        result = result / temp;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>因为溢出问题（虽然这道题绰绰有余），所以这个方法在面对20x20，50x50甚至100*100的矩形时完全没有办法，因此有了另外两种解题方式<strong>DP（动态规划）</strong>，<strong>递归法</strong>。</p>
-<p><strong>动态规划</strong></p>
-<p>从终点反推来看，一共有两个格子可以到达目的地“华”分别是当前行的上一个和当前列的上一个，如下图：</p>
-<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/动态规划路径.PNG" alt=""></p>
-<p>我们将整个表格看做一个二维数组dp，那么到达终点<code>dp[m][n]</code>的方法数等于到达当前行的上一个方法数 + 到达当前列的上一个方法数 <code>dp[m-1][n] + dp[m][n-1]</code></p>
-<p>由此我们得到了一个动态规划递推方程： <code>dp[m-1][n] + dp[m][n-1]</code></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kf</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span>[][] dp = <span class="keyword">new</span> <span class="keyword">int</span>[m][n];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) dp[i][<span class="number">0</span>] = <span class="number">1</span>;   <span class="comment">//初始化行及列</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) dp[<span class="number">0</span>][i] = <span class="number">1</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt; n; j++)&#123;</span><br><span class="line">                dp[i][j] = dp[i-<span class="number">1</span>][j] + dp[i][j-<span class="number">1</span>];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[m-<span class="number">1</span>][n-<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>1.5 编写一种递归方法，它返回数<em>N</em>的二进制表示中1的个数。利用这样的事实：如果<em>N</em>是奇数，那么其1的个数等于<em>N/2</em>的二进制表示中1的个数加1。</strong></p>
-<p>这道题常规写法是除以二取余分别获取每个二进制位数做一个统计，但是我不！</p>
-<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/TIM图片20200429153320.gif" alt=""></p>
-<p>作为一个有追求的coder怎么能容忍如此低效🙉，于是想到了另一种方法<strong>位运算</strong>。可以通过计算其 <strong>a &amp;= (a-1)</strong> 统计1的个数，以11D为例：</p>
-<ol>
-<li><p>计算前：000 010 11   </p>
-<p>计算后：000 010 10</p>
-</li>
-<li><p>计算前：000 010 10</p>
-<p>计算后：000 010 00</p>
-</li>
-<li><p>计算前：000 000 00</p>
-</li>
-</ol>
-<p>每进行一次运算，二进制中就少了一个1，所以我们可以使用以下方法统计：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> cont = <span class="number">0</span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">oneNum</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">      <span class="keyword">if</span> (n &lt;= <span class="number">0</span>)&#123;	<span class="comment">//递归终止条件</span></span><br><span class="line">          <span class="keyword">return</span> cont;</span><br><span class="line">      &#125;</span><br><span class="line">      n &amp;= (n-<span class="number">1</span>);</span><br><span class="line">      cont++;</span><br><span class="line">      <span class="keyword">return</span> oneNum(n);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>1.6 编写带有下列声明的例程：</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">permute</span><span class="params">(String str)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">permute</span><span class="params">(<span class="keyword">char</span>[] str, <span class="keyword">int</span> low, <span class="keyword">int</span> higt)</span></span>;</span><br></pre></td></tr></table></figure>
-<p>第一个例程是个驱动程序，他调用第二个例程并显示<code>String str</code>中的字符的所有排列。如果<code>str</code>是”abc”，那么输出的串则是abc，acb，bac，bca，cab和cba。第二个例程使用递归。</p>
-<p>依旧是全排列问题，先分析一下，以abc为例：</p>
-<ul>
-<li><p>a开头的排列有：[a,b,c] ,[a,c,b]；</p>
-</li>
-<li><p>b开头的排列有：[b,a,c] ,[b,c,a]；</p>
-</li>
-<li>c开头的排列有：[c,a,b] ,[c,b,a];</li>
-</ul>
-<p>由此我们可以将这些排列画成一棵根节点为[]的枚举树：</p>
-<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/排列组合树状图.png" alt=""></p>
-<p>这棵树的叶子节点就是我们需要找的排列，我们要使用的方法就是深度优先遍历。顾名思义，深度优先遍历是选择一个节点一直走到最终的叶子节点回溯。而广度优先遍历则是优先选择相邻的节点。</p>
-<p><code>used</code>：标记某个字符是否被选中，以避免重复选取。</p>
-<p><code>path</code>：双端队列这里作为一个栈来使用，用来保存字符串的组合</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">Deque&lt;Character&gt; path = <span class="keyword">new</span> ArrayDeque&lt;&gt;(); <span class="comment">//定义一个双端队列</span></span><br><span class="line">   <span class="keyword">boolean</span>[] used;  <span class="comment">//标记字符是否已经被选择</span></span><br><span class="line">   <span class="keyword">int</span> len = <span class="number">0</span>;    <span class="comment">//字符串长度</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">permute</span><span class="params">(String str)</span></span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (str.length() == <span class="number">0</span>)&#123;	<span class="comment">//当字符串长度为0时return</span></span><br><span class="line">           <span class="keyword">return</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       len = str.length();</span><br><span class="line">       used = <span class="keyword">new</span> <span class="keyword">boolean</span>[len];</span><br><span class="line">       permute(str.toCharArray(),<span class="number">0</span>,len);</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">   <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">permute</span><span class="params">(<span class="keyword">char</span>[] str, <span class="keyword">int</span> low, <span class="keyword">int</span> higt)</span></span>&#123;</span><br><span class="line">       <span class="keyword">if</span> (low == higt)&#123;	<span class="comment">//递归终止条件</span></span><br><span class="line">           System.out.println(path.toString());</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; higt; i++) &#123;</span><br><span class="line">           <span class="keyword">if</span> (used[i])&#123;   <span class="comment">//已使用 跳出本次循环</span></span><br><span class="line">               <span class="keyword">continue</span>;</span><br><span class="line">           &#125;</span><br><span class="line">           path.addLast(str[i]); <span class="comment">//将数字添加path的末尾</span></span><br><span class="line">           used[i] = <span class="keyword">true</span>; <span class="comment">//更改标识为已使用</span></span><br><span class="line">           permute(str, low+<span class="number">1</span>,higt);   <span class="comment">//递归</span></span><br><span class="line">           path.removeLast();  <span class="comment">//回溯</span></span><br><span class="line">           used[i] = <span class="keyword">false</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p>本篇blog结束。</p>
+        <h1 id="第3章-操作系统基本原理"><a href="#第3章-操作系统基本原理" class="headerlink" title="第3章 操作系统基本原理"></a>第3章 操作系统基本原理</h1><p>&emsp;&emsp;操作系统是计算机系统中最重要、最基本的系统软件，它位于<strong>硬件</strong>和<strong>用户</strong>之间，向用户提供<strong>接口</strong>，方便用户使用计算机；且能够<strong>管理计算机软硬件资源</strong>。<a id="more"></a>从资源管理的角度来看，操作系统是计算机系统中的<strong>资源管理器</strong>，负责对系统的软硬件资源实施有效的<strong>控制</strong>和<strong>管理</strong>，提高系统资源的利用率；从方便用户使用的角度来看，操作系统是一台虚拟机，它是计算机硬件的首次可扩充，隐藏了硬件操作的细节，使用户与硬件细节隔离，从而方便了用户使用。</p>
+<h4 id="3-1-操作系统概述"><a href="#3-1-操作系统概述" class="headerlink" title="3.1  操作系统概述"></a>3.1  操作系统概述</h4><p>&emsp;&emsp;操作系统：操作系统是控制和管理计算机软硬件资源 ，以尽可能合理、有效的方法<strong>组织多个用户共享多种资源的的程序集合</strong>。它具有：</p>
+<p>&emsp;&emsp;1. 并发性</p>
+<p>&emsp;&emsp;2. 共享性</p>
+<p>&emsp;&emsp;3. 虚拟性</p>
+<p>&emsp;&emsp;4. 不确定性</p>
+<p><strong>操作系统的主要功能</strong></p>
+<p>&emsp;&emsp;1） 处理机管理。负责对处理机的<strong>分配</strong>和<strong>运行</strong>实施有效的管理(以<strong>进程</strong>为单位)。处理机管理可归结为<strong>进程管理。</strong></p>
+<p>&emsp;&emsp;2） 存储器管理。主要任务是堆内存进行<strong>分配</strong>、<strong>保护</strong>和<strong>扩充</strong>。</p>
+<p>&emsp;&emsp;3） 设备管理。具有<strong>设备分配</strong>、<strong>设备传输控制</strong>和<strong>设备独立性</strong>等功能。</p>
+<p>&emsp;&emsp;&emsp;&emsp;<1>&nbsp;设备分配是指根据一定的原则对设备进行分配，为了使设备与主机并行工作，常采用<strong>缓冲技术</strong>和<strong>虚拟现实</strong>技术。</p>
+<p>&emsp;&emsp;&emsp;&emsp;<1>&nbsp;设备传输控制是指实现物理的输入输出(<strong>Input/Output，I/O</strong>)操作，即<strong>启动设备</strong>、<strong>中断处理</strong>、<strong>结束处理</strong>等。</p>
+<p>&emsp;&emsp;&emsp;&emsp;<1>&nbsp;设备独立性是指用户向系统申请的设备与实际操作的设备无关。</p>
+<p>&emsp;&emsp;4） 文件管理。负责对文件存储空间进行管理，包括存储空间的<strong>分配</strong>和<strong>回收</strong>，<strong>目录管理</strong>、<strong>文件操作管理</strong>和<strong>文件保护</strong>等功能。</p>
+<p>&emsp;&emsp;5） 用户接口。是<strong>为了用户能够灵活、方便的使用计算机和系统功能</strong>。它包括两大类，分别是<strong>程序接口</strong>和<strong>操作接口</strong>。</p>
+<h4 id="3-1-1-操作系统的类型"><a href="#3-1-1-操作系统的类型" class="headerlink" title="3.1.1  操作系统的类型"></a>3.1.1  操作系统的类型</h4><p>&emsp;&emsp;一般来说，操作系统可分为<strong>单用户操作系统</strong>、<strong>批处理系统</strong>、<strong>分时系统</strong>、<strong>实时系统</strong>、<strong>网络操作系统</strong>、<strong>分布式操作系统</strong>、<strong>并行操作系统</strong>和<strong>嵌入式操作系统</strong>等。</p>
+<p>&emsp;&emsp;<strong>1. 单用户操作系统</strong></p>
+<p>&emsp;&emsp;基本特征是在一台处理机上<strong>只能支持一个用户程序的运行</strong>，系统的全部资源都提供给该用户使用。目前多数<strong>微机</strong>运行的操作系统都属于单用户操作系统。</p>
+<p>&emsp;&emsp;<strong>2. 批处理系统</strong>（也称<strong>作业处理系统</strong>）</p>
+<p>&emsp;&emsp;在批处理系统中，作业成批的装入计算机中，由操作系统在计算机的输入井将其组织好，按一定的算法选择其中的一个或多个作业，将其调入内存并使其运行。把结果放入磁盘输出井，由计算机统一输出后交给用户。</p>
+<p>&emsp;&emsp;批处理系统中配置了一个<strong>监督程序</strong>，在该监督程序控制下，系统能够对一批作业自动进行处理。其基本特征是<strong>“批量”</strong>，将作业的<strong>吞吐量作为主要目标</strong>，同时兼顾作业的<strong>周转时间</strong>。</p>
+<p>&emsp;&emsp;批处理系统又分<strong>单道批处理系统</strong>和<strong>多道批处理系统</strong>。</p>
+<p>&emsp;&emsp;单道批处理系统在内存中只能存放一道作业，大大<strong>减少了人工操作的时间</strong>，<strong>提高了机器的利用率</strong>。但是，对于某些作业来说，当它发出I/O请求后，中央处理单元(<strong>Central Processing Unit， CPU</strong>)必须等待I/O的完成，而由于I/O设备的低速性，从而使CPU的利用率很低。为了改善CUP的利用率，引入了<strong>多道程序设计技术</strong>，就形成了<strong>多道批处理操作系统</strong>。</p>
+<p>&emsp;&emsp;多道批处理操作系统中，内存中可同时有多道作业在运行，且作业可随时被调入系统，并存放在外存中形成作业队列。多道批处理系统具有<strong>资源利用率高</strong>和<strong>系统吞吐量大</strong>的优点，但它将用户和计算机操作员分开，使<strong>用户无法直接与自己的作业进行交互</strong>。另外，作业需要进行排队，依次处理，因此，<strong>作业的平均周转时间较长</strong>。</p>
+<p>&emsp;&emsp;<strong>3. 分时操作系统</strong></p>
+<p>&emsp;&emsp;分时操作系统是为了解决批处理系统的缺点（<strong>无法进行人机交互</strong>），并使多个用户能同时使用自己的终端以交互方式使用计算机，共享主机的资源，为此，系统采用了<strong>分时技术</strong>，把CPU的时间划分为很短的时间片，轮流地分配给各个终端作业使用。这种操作系统就被成为<strong>分时操作系统</strong>，简称为<strong>分时系统</strong>。</p>
+<p>&emsp;&emsp;在规定时间片内，作业没有执行完毕，，也必须将CPU交给下一个作业使用，并等待下一轮时间片继续执行。这样，系统才能够及时的响应每一个用户的请求。分时系统具有<strong>多路性</strong>、<strong>独立性</strong>、<strong>及时性</strong>、<strong>交互性</strong>和<strong>同时性</strong>等特征。</p>
+<p>&emsp;&emsp;<strong>4. 网络操作系统</strong></p>
+<p>&emsp;&emsp;是指在计算机网络环境下，具有网络功能的操作系统。网络操作系统最主要的特点是网络中<strong>各种资源的共享</strong>，以及<strong>各台计算机之间的通信</strong>。</p>
+<p>&emsp;&emsp;<strong>5.  分布式操作系统</strong></p>
+<p>&emsp;&emsp;分布式系统是由多台计算机组成的系统，系统中若干台计算机可以相互和做，共同完成同一个任务。在分布式系统中，任意两台计算机之间都可以利用通信交换信息，系统中的资源为所有用户共享。分布式系统的优点是<strong>各节点的自制性好</strong>、<strong>资源共享的透明性强</strong>、<strong>各节点具有协同性</strong>，其主要缺点是<strong>系统状态不精确</strong>、<strong>控制机构复杂</strong>、<strong>通信开销会引起性能下降</strong>。</p>
+<p>&emsp;&emsp;分布式操作系统是网络操作系统的更高级形式，他保持了网络操作系统所拥有的全部功能，与网络操作系统的主要区别在于任务的分布性，即把一个大人物分解为若干个子任务，并被分配到不同的CPU上执行。</p>
+<p>&emsp;&emsp;<strong>6. 嵌入式操作系统</strong></p>
+<p>&emsp;&emsp;嵌入式操作系统运行在<strong>嵌入式智能芯片</strong>环境中，对整个芯片和他所操作、控制的各种部件装置等资源进行<strong>统一协调</strong>、<strong>处理</strong>、<strong>指挥</strong>和<strong>控制</strong>。嵌入式操作系统具有<strong>微型化</strong>、<strong>可定制</strong>、<strong>实时性</strong>、<strong>可靠性</strong>、<strong>易移植性</strong>等特点。</p>
+<p>&emsp;&emsp;<strong>嵌入式实时操作系统</strong>是指系统能够及时响应外部事件的请求，在规定时间完成该事件的处理，控制所有史诗任务协调一致的运行。它的特点是<strong>及时性</strong>、<strong>支持多道程序设计</strong>、<strong>高可靠性和较强的过载防护能力</strong>。</p>
+<h3 id="3-1-2-操作系统的结构"><a href="#3-1-2-操作系统的结构" class="headerlink" title="3.1.2 操作系统的结构"></a>3.1.2 操作系统的结构</h3><p>&emsp;&emsp;从操作系统的结构来看，主要有<strong>整体结构</strong>、<strong>层次结构</strong>、<strong>客户/服务器结构</strong>和<strong>面向对象结构</strong>等。</p>
+<p>&emsp;&emsp;<strong>1. 整体结构</strong></p>
+<p>&emsp;&emsp;整体结构也称为<strong>模块组合结构</strong>或<strong>无序结构</strong>，是基于结构化程序设计的一种软件设计方法，其主要设计思想和步骤如下：</p>
+<p>&emsp;&emsp;1） 把模块作为操作系统的基本单位，按功能将系统分解为若干模块，每个模块具有独立功能，若干模块协作完成某个功能；明确各模块之间接口关系，各模块之间可以不加控制地自由调用（无序调用法）；模块之间传递参数或返回结果时，其个数和方式也可根据需要随意约定；</p>
+<p>&emsp;&emsp;2） 分别设计、编码、调试各个模块。</p>
+<p>&emsp;&emsp;3） 将所有模块连接成一个完整的系统。</p>
+<p>&emsp;&emsp;<strong>主要优点：</strong></p>
+<p>&emsp;&emsp;1）结构紧密、组合方便，灵活性大。</p>
+<p>&emsp;&emsp;2） 系统效率较高。</p>
+<p>&emsp;&emsp;3） 能加快操作系统研制过程。</p>
+<p>&emsp;&emsp;<strong>主要缺点：模块独立性差，模块之间牵连甚多，形成了复杂的调用关系，甚至有很多循环利用，造成系统结构不清晰，正确性难以保证，可靠性降低，系统功能的增、删、改十分困难。</strong></p>
+<p> &emsp;&emsp;<strong>2. 层次结构</strong></p>
+<p>&emsp;&emsp;层次结构将系统划分为<strong>内核</strong>和<strong>若干模块</strong>（或<strong>进程</strong>），模块按功能分层，各层之间只能是单向依赖或单项调用关系（底层为高层服务），使系统结构清晰不构成循环调用。层次结构有<strong>全序</strong>和<strong>半序</strong>之分。每层中各模块之间保持独立，互相没有联系，这种层次结构就称为全序；如果某些层内支架你允许有相互调用或通信的关系，则这种层次结构就称为半序；</p>
+<p>&emsp;&emsp;<strong>在层次结构中，外层功能是内层功能的扩充或延伸，内层功能为外层提供了支撑和基础。</strong>因此，整个系统的接口少且简单。整个系统的正确性和通过各层的正确性来保证，从而使系统的正确性大大提高。层次结构的另一个优点是增加、修改或替换一个层次不会影响其他层次，有利于系统的<strong>维护</strong>和<strong>扩展</strong>。<strong>层次结构的劣势是花费在通信上的开销较大，系统效率有所降低。</strong></p>
+<p>&emsp;&emsp;<strong>3. 客户/服务器结构</strong></p>
+<p>&emsp;&emsp;现代操作系统大多有两种工作状态（<strong>核心态和用户态</strong>）。一般应用程序工作在用户态，内核模块和操作系统核心在核心态。</p>
 
       
 
@@ -265,15 +258,11 @@ A^{m-1}_{n+m-2}</script><p>因此我们只需要计算该公式就能得到正�
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">系统分析师教程</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">练习</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -329,7 +318,7 @@ A^{m-1}_{n+m-2}</script><p>因此我们只需要计算该公式就能得到正�
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:/posts/data_structures_and_algorithm_analysis_in_java_1.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:/posts/25721.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -343,9 +332,18 @@ A^{m-1}_{n+m-2}</script><p>因此我们只需要计算该公式就能得到正�
   
 <nav id="article-nav">
   
+    <a href="/posts/33521.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          《数据结构与算法分析》第一章练习
+        
+      </div>
+    </a>
   
-    <a href="/posts/operating_system_fundamentals.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">系分第三章_操作系统基本原理</div>
+  
+    <a href="/posts/44100.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">GitHub的常用命令</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -364,6 +362,19 @@ A^{m-1}_{n+m-2}</script><p>因此我们只需要计算该公式就能得到正�
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#第3章-操作系统基本原理"><span class="toc-number">1.</span> <span class="toc-text">第3章 操作系统基本原理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-操作系统概述"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">3.1  操作系统概述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-1-操作系统的类型"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">3.1.1  操作系统的类型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-1-2-操作系统的结构"><span class="toc-number">1.0.1.</span> <span class="toc-text">3.1.2 操作系统的结构</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
