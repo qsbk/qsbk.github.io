@@ -264,13 +264,16 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 <script type="text/x-mathjax-config">
 MathJax.Hub.Config({
+    showProcessingMessages: false, //关闭js加载过程信息
+    messageStyle: "none", //不显示信息
     tex2jax: {
         inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
         processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
-        'HTML-CSS': {
-            showMathMenu: false //禁用右键菜单
-        }
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        
+    },
+    'HTML-CSS': {
+        showMathMenu: false //禁用右键菜单
     }
 });
 
