@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="1. 前言因为我也是第一次接触hook，所以有错误还望斧正。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2020-04-29T11:19:51.896Z">
+<meta property="og:updated_time" content="2020-05-03T04:54:11.463Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -173,8 +173,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h1><p>因为我也是第一次接触hook，所以有错误还望斧正。<a id="more"></a></p>
-<h1 id="2-Linux-Proc文件系统"><a href="#2-Linux-Proc文件系统" class="headerlink" title="2. Linux Proc文件系统"></a>2. Linux Proc文件系统</h1><p>Android系统是基于<strong>Linux</strong>的，因此在内存管理方面很多机制都和Linux相似，和Linux相同，Android提供了基于/proc的<strong>“伪文件”系统</strong>作为查看用户进程内存映像接口(cat /proc/pid/maps)。因此，了解Linux Proc文件系统显得尤为重要。</p>
+        <h2 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h2><p>因为我也是第一次接触hook，所以有错误还望斧正。<a id="more"></a></p>
+<h2 id="2-Linux-Proc文件系统"><a href="#2-Linux-Proc文件系统" class="headerlink" title="2. Linux Proc文件系统"></a>2. Linux Proc文件系统</h2><p>Android系统是基于<strong>Linux</strong>的，因此在内存管理方面很多机制都和Linux相似，和Linux相同，Android提供了基于/proc的<strong>“伪文件”系统</strong>作为查看用户进程内存映像接口(cat /proc/pid/maps)。因此，了解Linux Proc文件系统显得尤为重要。</p>
 <p>与其它常见的文件系统不同的是，/proc是一种伪文件系统（也即<strong>虚拟文件系统</strong>），存储的是当前内核运行状态的一系列特殊文件，用户可以通过这些文件查看有关系统硬件及当前正在运行进程的信息，甚至可以通过更改其中某些文件来改变内核的运行状态。 </p>
 <p>基于/proc文件系统如上所述的特殊性，其内的文件也常被称作虚拟文件，并具有一些独特的特点。例如，其中有些文件虽然使用查看命令查看时会返回大量信息，但文件本身的大小却会显示为0字节。此外，这些特殊文件中大多数文件的时间及日期属性通常为当前系统时间和日期，这跟它们随时会被刷新（存储于RAM中）有关。 </p>
 
@@ -333,7 +333,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#1-前言"><span class="toc-number">1.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#2-Linux-Proc文件系统"><span class="toc-number">2.</span> <span class="toc-text">2. Linux Proc文件系统</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-前言"><span class="toc-number">1.</span> <span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-Linux-Proc文件系统"><span class="toc-number">2.</span> <span class="toc-text">2. Linux Proc文件系统</span></a></li></ol>
                     </div>
                 </span>
             </div>
@@ -489,7 +489,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">系统分析师教程</a>
+                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -497,7 +497,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">GitHub</a>
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">内存</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Hook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -513,15 +521,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">内存</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Hook</a>
+                <a href="javascript:void(0)" class="js-tag color3">系统分析师教程</a>
               </li>
             
             <div class="clearfix"></div>
