@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="">
   <title>Android内存Hook及修改器原理 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="大梦将寤，犹事雕虫。——《陶庵梦记》  2. Linux Proc文件系统Android系统是基于Linux的，因此在内存管理方面很多机制都和Linux相似，和Linux相同，Android提供了基于&#x2F;proc的“伪文件”系统作为查看用户进程内存映像接口(cat &#x2F;proc&#x2F;pid&#x2F;maps)。因此，了解Linux Proc文件系统显得尤为重要。 与其它常见的文件系统不同的是，&#x2F;proc是一种伪">
+  <meta name="description" content="大梦将寤，犹事雕虫。——《陶庵梦记》  2. Linux Proc文件系统">
 <meta name="keywords" content="Android,内存,Hook">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Android内存Hook及修改器原理">
 <meta property="og:url" content="&#x2F;posts&#x2F;59763.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="大梦将寤，犹事雕虫。——《陶庵梦记》  2. Linux Proc文件系统Android系统是基于Linux的，因此在内存管理方面很多机制都和Linux相似，和Linux相同，Android提供了基于&#x2F;proc的“伪文件”系统作为查看用户进程内存映像接口(cat &#x2F;proc&#x2F;pid&#x2F;maps)。因此，了解Linux Proc文件系统显得尤为重要。 与其它常见的文件系统不同的是，&#x2F;proc是一种伪">
+<meta property="og:description" content="大梦将寤，犹事雕虫。——《陶庵梦记》  2. Linux Proc文件系统">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2020-05-03T05:03:58.291Z">
+<meta property="og:updated_time" content="2020-05-03T05:05:08.938Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -176,7 +176,7 @@
         <blockquote>
 <p>大梦将寤，犹事雕虫。——《陶庵梦记》</p>
 </blockquote>
-<h2 id="2-Linux-Proc文件系统"><a href="#2-Linux-Proc文件系统" class="headerlink" title="2. Linux Proc文件系统"></a>2. Linux Proc文件系统</h2><p>Android系统是基于<strong>Linux</strong>的，因此在内存管理方面很多机制都和Linux相似，和Linux相同，Android提供了基于/proc的<strong>“伪文件”系统</strong>作为查看用户进程内存映像接口(cat /proc/pid/maps)。因此，了解Linux Proc文件系统显得尤为重要。</p>
+<h2 id="2-Linux-Proc文件系统"><a href="#2-Linux-Proc文件系统" class="headerlink" title="2. Linux Proc文件系统"></a>2. Linux Proc文件系统<a id="more"></a></h2><p>Android系统是基于<strong>Linux</strong>的，因此在内存管理方面很多机制都和Linux相似，和Linux相同，Android提供了基于/proc的<strong>“伪文件”系统</strong>作为查看用户进程内存映像接口(cat /proc/pid/maps)。因此，了解Linux Proc文件系统显得尤为重要。</p>
 <p>与其它常见的文件系统不同的是，/proc是一种伪文件系统（也即<strong>虚拟文件系统</strong>），存储的是当前内核运行状态的一系列特殊文件，用户可以通过这些文件查看有关系统硬件及当前正在运行进程的信息，甚至可以通过更改其中某些文件来改变内核的运行状态。 </p>
 <p>基于/proc文件系统如上所述的特殊性，其内的文件也常被称作虚拟文件，并具有一些独特的特点。例如，其中有些文件虽然使用查看命令查看时会返回大量信息，但文件本身的大小却会显示为0字节。此外，这些特殊文件中大多数文件的时间及日期属性通常为当前系统时间和日期，这跟它们随时会被刷新（存储于RAM中）有关。 </p>
 
