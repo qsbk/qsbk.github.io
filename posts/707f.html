@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="">
   <title>将hexo部署到阿里云服务器 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="访问速度，SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
+  <meta name="description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
 <meta name="keywords" content="hexo,blog,优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将hexo部署到阿里云服务器">
 <meta property="og:url" content="&#x2F;posts&#x2F;707f.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="访问速度，SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
+<meta property="og:description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;对比.PNG">
-<meta property="og:updated_time" content="2020-05-03T16:27:40.117Z">
+<meta property="og:updated_time" content="2020-05-04T09:36:13.264Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;对比.PNG">
   
@@ -175,19 +175,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>访问速度，SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：<a id="more"></a></p>
+        <p>访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：<a id="more"></a></p>
 <p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/对比.PNG" alt=""></p>
 <p>就我的体验而言，从20s -&gt; 3s，也算是满足了我的基本需求。</p>
-<h3 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h3><p>先来了解下在<code>hexo d -g</code>时 hexo做了些什么，这样有助于我们理解接下来的流程。</p>
+<h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><p>先来了解下在<code>hexo d -g</code>时 hexo做了些什么，这样有助于我们理解接下来的流程。</p>
 <p>第一步：hexo会将本地的md文件渲染为静态文件</p>
 <p>第二步：调用Git推到服务器的仓库区</p>
 <p>第三步：服务器通过git-Hooks同步到网站根目录</p>
 <p>hexo本地环境配置及初始化这里不再赘述，其中服务器的环境需要安装<code>Git</code>,<code>Nginx</code>如果安装了BT面板可以直接创建一个站点不需要修改<code>Nginx</code>的配置文件</p>
-<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install git</span><br></pre></td></tr></table></figure>
 <ul>
 <li>检查安装<code>git --version</code></li>
 </ul>
-<h4 id="创建git用户"><a href="#创建git用户" class="headerlink" title="创建git用户"></a>创建git用户</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
+<h3 id="创建git用户"><a href="#创建git用户" class="headerlink" title="创建git用户"></a>创建git用户</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">adduser git</span><br></pre></td></tr></table></figure>
 <p>vim打开sudo配置文件</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 740 /etc/sudoers</span><br><span class="line">vim /etc/sudoers</span><br></pre></td></tr></table></figure>
 <p>找到以下内容</p>
@@ -197,17 +197,37 @@
 <p>:切换命令模式输入wq保存并退出，记得改回sudo文件的权限<code>chmod 400 /etc/sudoers</code></p>
 <p>设置git用户密码</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">需要root权限</span></span><br><span class="line">sudo passwd git</span><br></pre></td></tr></table></figure>
-<h4 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h4><p>切换git用户， 创建 ~/.ssh 文件夹</p>
+<h3 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h3><p>切换git用户， 创建 ~/.ssh 文件夹</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br><span class="line">mkdir ~/.ssh</span><br></pre></td></tr></table></figure>
 <p>打开本地电脑用户文件夹下的<strong>.ssh</strong>文件夹</p>
 <p>如果你已经生成<strong>ssh-keygen</strong>的话里面会有两个文件<strong>id_rsa.pub</strong>和<strong>id_rsa</strong></p>
 <p>我们将本地的公钥也就是<strong>id_rsa.pub</strong>文件使用FTP或者BT面板上传到服务器git用户的<strong>.ssh</strong>文件夹中</p>
 <p>将文件复制一份并配置权限</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cp id_rsa.pub authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorzied_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cp id_rsa.pub authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorzied_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
 <ul>
 <li>使用<code>ssh -v git@SERVER</code>（server是你的服务器公网IP）测试是否能够连通</li>
 </ul>
-<h4 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h4>
+<h3 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h3><p>执行命令创建一个裸仓库</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo git init --bare blog.git</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>使用–bare 参数，Git 就会创建一个裸仓库，裸仓库没有工作区，我们不会在裸仓库上进行操作，它只为共享而存在。</p>
+</blockquote>
+<p>改变仓库拥有者为git</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R git:git blog.git</span><br></pre></td></tr></table></figure>
+<h3 id="配置钩子"><a href="#配置钩子" class="headerlink" title="配置钩子"></a>配置钩子</h3><p> 在 <code>blog.git/hooks</code> 目录下新建一个 <code>post-receive</code> 文件并编辑</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/blog.git/hooks/post-receive</span><br></pre></td></tr></table></figure>
+<p>在<code>post-receive</code>文件中写入</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">git --work-tree=/www/wwwroot/blog --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure>
+<p>其中<code>/www/wwwroot/blog</code>路径是你的网站根目录<code>/home/git/blog.git</code>是你的仓库目录</p>
+<p>赋予<code>post-receive</code>执行权限<code>chmod +x ~/blog.git/hooks/post-receive</code></p>
+<p><strong>至此服务端配置结束~</strong></p>
+<h3 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置_config.yml"></a>配置_config.yml</h3><p>放在阿里的服务器国内访问会很快，但是国外就无法访问了，或速度很慢。作为一个国际化的coder（假装会有外国人看），所以我保留了GitHub的仓库。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">'git'</span></span><br><span class="line">  <span class="attr">repository:</span> </span><br><span class="line">    <span class="attr">github:</span> <span class="string">你的GitHub仓库SSh</span></span><br><span class="line">    <span class="attr">aliyun:</span> <span class="string">git@你的服务器公网IP:/home/git/blog.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+<p>这样<code>hexo d -g</code>会同时push到两个仓库中。需要注意的是如果<code>hexo d -g</code>命令执行成功，服务器的网站根目录却没有生成任何静态文件，那么需要手动执行一遍</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git --work-tree=/www/wwwroot/blog --git-dir=/home/git/blog.git checkout -f</span><br></pre></td></tr></table></figure>
+<p>最后将境外的线路解析到GitHub，将国内解析到阿里，这样我们就是一个<del>国际化的coder</del>了&emsp;大误</p>
+<p><strong><em>end</em></strong></p>
+
       
 
       

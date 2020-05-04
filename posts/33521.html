@@ -20,7 +20,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;动态规划路径.PNG">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;TIM图片20200429153320.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;排列组合树状图.png">
-<meta property="og:updated_time" content="2020-05-03T05:11:23.220Z">
+<meta property="og:updated_time" content="2020-05-04T08:55:31.320Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;20190226185123727.jpg">
   
@@ -190,7 +190,7 @@ A^m_n=n(n-1)(n-2)...(n-m+1)=\frac{n!}{(n-m)!}(m\leq n,m,n\in N^*)</script><p>得
 <script type="math/tex; mode=display">
 A^{m-1}_{n+m-2}</script><p>因此我们只需要计算该公式就能得到正确结果。但是需要注意的是因为是阶乘运算，<code>remp</code> <code>result</code>很容易溢出。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">kf</span><span class="params">(<span class="keyword">int</span> m, <span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m-<span class="number">1</span> ; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            temp *= i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i &lt;= m + n - <span class="number">2</span>; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            result *= i;</span><br><span class="line">        &#125;</span><br><span class="line">        result = result / temp;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p>因为溢出问题（虽然这道题绰绰有余），所以这个方法在面对20x20，50x50甚至100*100的矩形时完全没有办法，因此有了另外两种解题方式<strong>DP（动态规划）</strong>，<strong>递归法</strong>。</p>
+<p>因为溢出问题（虽然这道题绰绰有余），所以这个方法在面对20x20，50x50甚至100x100的矩形时完全没有办法，因此有了另外两种解题方式<strong>DP（动态规划）</strong>，<strong>递归法</strong>。</p>
 <p><strong>动态规划</strong></p>
 <p>从终点反推来看，一共有两个格子可以到达目的地“华”分别是当前行的上一个和当前列的上一个，如下图：</p>
 <p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/动态规划路径.PNG" alt=""></p>
