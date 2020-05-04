@@ -17,7 +17,7 @@
 <meta property="og:description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;对比.PNG">
-<meta property="og:updated_time" content="2020-05-04T09:36:13.264Z">
+<meta property="og:updated_time" content="2020-05-04T09:44:11.441Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;对比.PNG">
   
@@ -200,7 +200,7 @@
 <h3 id="配置ssh"><a href="#配置ssh" class="headerlink" title="配置ssh"></a>配置ssh</h3><p>切换git用户， 创建 ~/.ssh 文件夹</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">su git</span><br><span class="line">mkdir ~/.ssh</span><br></pre></td></tr></table></figure>
 <p>打开本地电脑用户文件夹下的<strong>.ssh</strong>文件夹</p>
-<p>如果你已经生成<strong>ssh-keygen</strong>的话里面会有两个文件<strong>id_rsa.pub</strong>和<strong>id_rsa</strong></p>
+<p>如果你已经生成<strong>ssh-keygen</strong>里面会有两个文件<strong>id_rsa.pub</strong>和<strong>id_rsa</strong></p>
 <p>我们将本地的公钥也就是<strong>id_rsa.pub</strong>文件使用FTP或者BT面板上传到服务器git用户的<strong>.ssh</strong>文件夹中</p>
 <p>将文件复制一份并配置权限</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br><span class="line">cp id_rsa.pub authorized_keys</span><br><span class="line">chmod 600 ~/.ssh/authorzied_keys</span><br><span class="line">chmod 700 ~/.ssh</span><br></pre></td></tr></table></figure>
