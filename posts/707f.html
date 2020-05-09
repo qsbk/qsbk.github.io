@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="">
   <title>将hexo部署到阿里云服务器 | Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
+  <meta name="description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，看看成果：">
 <meta name="keywords" content="hexo,blog,优化">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将hexo部署到阿里云服务器">
 <meta property="og:url" content="&#x2F;posts&#x2F;707f.html">
 <meta property="og:site_name" content="Blog">
-<meta property="og:description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：">
+<meta property="og:description" content="访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，看看成果：">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;对比.PNG">
-<meta property="og:updated_time" content="2020-05-04T09:44:11.441Z">
+<meta property="og:updated_time" content="2020-05-04T10:17:25.082Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;对比.PNG">
   
@@ -175,7 +175,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，先看看成果：<a id="more"></a></p>
+        <p>访问速度和SEO一直是Hexo+GitHub搭建博客的痛点。其中访问速度来说，尽管图片等文件放到了阿里云oss，但一篇文章内容稍多访问速度就被拖到了20秒左右，这实在是没办法容忍的事情。起初我打算换成WordPress，折腾了几天，还是不好用而且对于我这种只是单纯的写博客来说，还是hexo更轻量好用一些，而且真的是大爱markdown。回到正题，看看成果：<a id="more"></a></p>
 <p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/对比.PNG" alt=""></p>
 <p>就我的体验而言，从20s -&gt; 3s，也算是满足了我的基本需求。</p>
 <h2 id="搭建流程"><a href="#搭建流程" class="headerlink" title="搭建流程"></a>搭建流程</h2><p>先来了解下在<code>hexo d -g</code>时 hexo做了些什么，这样有助于我们理解接下来的流程。</p>
