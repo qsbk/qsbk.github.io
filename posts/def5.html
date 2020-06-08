@@ -24,7 +24,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;代码包上传保存.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;SignIn修改配置文件.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;保存执行按钮.png">
-<meta property="og:updated_time" content="2020-06-08T08:11:19.998Z">
+<meta property="og:updated_time" content="2020-06-08T13:41:09.848Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云登录.png">
   
@@ -215,7 +215,7 @@
 <p><strong>Post请求格式</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">     <span class="attr">"formWid"</span>: <span class="string">"309"</span>,</span><br><span class="line">     <span class="attr">"address"</span>: <span class="string">"x国x省x市"</span>,</span><br><span class="line">     <span class="attr">"collectWid"</span>: <span class="string">"19340"</span>,</span><br><span class="line">     <span class="attr">"schoolTaskWid"</span>: <span class="string">"55898"</span>,</span><br><span class="line">     <span class="attr">"form"</span>: [</span><br><span class="line">          &#123;</span><br><span class="line">               <span class="attr">"wid"</span>: <span class="string">"5766"</span>,</span><br><span class="line">               <span class="attr">"formWid"</span>: <span class="string">"309"</span>,</span><br><span class="line">               <span class="attr">"fieldType"</span>: <span class="number">2</span>,</span><br><span class="line">               <span class="attr">"title"</span>: <span class="string">"你的学生类别"</span>,</span><br><span class="line">               <span class="attr">"description"</span>: <span class="string">""</span>,</span><br><span class="line">               <span class="attr">"minLength"</span>: <span class="number">0</span>,</span><br><span class="line">               <span class="attr">"sort"</span>: <span class="string">"1"</span>,</span><br><span class="line">               <span class="attr">"maxLength"</span>: <span class="literal">null</span>,</span><br><span class="line">               <span class="attr">"isRequired"</span>: <span class="number">1</span>,</span><br><span class="line">               <span class="attr">"imageCount"</span>: <span class="literal">null</span>,</span><br><span class="line">               <span class="attr">"hasOtherItems"</span>: <span class="number">0</span>,</span><br><span class="line">               <span class="attr">"colName"</span>: <span class="string">"field001"</span>,</span><br><span class="line">               <span class="attr">"value"</span>: <span class="string">"专科生"</span>,</span><br><span class="line">               <span class="attr">"minValue"</span>: <span class="number">0</span>,</span><br><span class="line">               <span class="attr">"maxValue"</span>: <span class="number">0</span>,</span><br><span class="line">               <span class="attr">"isDecimal"</span>: <span class="literal">true</span>,</span><br><span class="line">               <span class="attr">"fieldItems"</span>: [</span><br><span class="line">                    &#123;</span><br><span class="line">                         <span class="attr">"itemWid"</span>: <span class="string">"14741"</span>,</span><br><span class="line">                         <span class="attr">"content"</span>: <span class="string">"专科生"</span>,</span><br><span class="line">                         <span class="attr">"isOtherItems"</span>: <span class="number">0</span>,</span><br><span class="line">                         <span class="attr">"contendExtend"</span>: <span class="string">""</span>,</span><br><span class="line">                         <span class="attr">"isSelected"</span>: <span class="number">1</span></span><br><span class="line">                    &#125;</span><br><span class="line">               ]</span><br><span class="line">          &#125;</span><br><span class="line">         ......</span><br></pre></td></tr></table></figure>
 <p>可以看的到，提交数据所必须的<code>formWid</code> <code>collectWid</code>可以从接口一中获取，通过接口二获取<code>schoolTaskWid</code>，最后再根据接口三获取from详细的选项信息，构造出<code>form</code>部分(其实就是把没有选中的选项remove)需要注意的是<strong>请求头中必须要有<code>Cpdaily-Extension</code></strong>，这是一串密文，我也没搞懂是什么，也不知道加密方式。但可以确定是，服务器只验证是否能解密，不验证数据正确性。所以一串密文，可以通用所有人。</p>
-<p>以上接口都需要登录才能使用，且登录后有一条关键<strong>cookie</strong>它的有效期<strong>非常非常非常短</strong>，基本上断了手动写入<strong>cookie</strong>的想法，后来我在查找资料的途中，发现了别人造好的轮子(登录功能是我从该项目上二次开发)，思路也是解析html获取必要信息，发送请求获取<strong>cookie</strong>。<strong>but！</strong>作者实现了ocr识别验证码，这是个危险的功能。但我用了人家的代码还是应该将项目链接放在这：<a href="https://github.com/ZimoLoveShuang/wisedu-unified-login-api" target="_blank" rel="noopener">链接</a></p>
+<p>以上接口都需要登录才能使用，且登录后有一条关键<strong>cookie</strong>它的有效期<strong>非常非常非常短</strong>，基本上断了手动写入<strong>cookie</strong>的想法，后来我在查找资料的途中，发现了别人造好的轮子(登录功能是我从该项目上二次开发)，思路也是解析html获取必要信息，发送请求获取<strong>cookie</strong>。<strong>but！</strong>作者实现了ocr识别验证码，这是个危险的功能。但我用了人家的代码还是应该将项目链接放在这：<a href="https://github.com/ZimoLoveShuang/wisedu-unified-login-api">链接</a></p>
 <font style="font-weight:bold;" size=4> 技术有罪，切记，切记!</font>
 
 <p>登录接口就不放出来了</p>
@@ -223,9 +223,9 @@
 <p><strong>配置文件读取用户信息</strong> -&gt; <strong>尝试登陆获取cookie</strong> -&gt;  <strong>携带cookie获取待填表单信息并构造待提交信息</strong> -&gt; <strong>提交</strong></p>
 <p>代码我就放在这吧，有兴趣的同学可以讨论一下😸😸</p>
 <p><strong>开发环境：Python 3.8</strong></p>
-<p><a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn.zip" target="_blank" rel="noopener">脚本下载链接</a></p>
+<p><a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn.zip">脚本下载链接</a></p>
 <h2 id="1-3-使用方法"><a href="#1-3-使用方法" class="headerlink" title="1.3 使用方法"></a>1.3 使用方法</h2><p><strong>1) 创建阿里云账号</strong></p>
-<p>阿里云官网：<a href="https://account.aliyun.com/login/qr_login.htm" target="_blank" rel="noopener">链接</a></p>
+<p>阿里云官网：<a href="https://account.aliyun.com/login/qr_login.htm">链接</a></p>
 <p>打开网页进入阿里云官网，阿里云可以使用<strong>支付宝</strong>或<strong>淘宝账号</strong>登录，如果提示实名认证就按照提示来。</p>
 <p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/阿里云登录.png" alt=""></p>
 <p>在进入登录跳转界面后，点击<strong>控制台</strong></p>
@@ -238,7 +238,7 @@
 <p><strong>新手教程可以跳过</strong>，进入函数计算的控制台界面后点击：</p>
 <p><strong>服务/函数</strong> -&gt; <strong>新建函数</strong> -&gt; <strong>下一步</strong></p>
 <p>函数名称填写<code>SignIn</code>运行环境选择<code>Python3</code>函数入口改为<code>SignIn.main</code>其他默认，点击完成</p>
-<p>跳转后进入函数编辑状态，选择代码包上传 <a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn_aliyun.zip" target="_blank" rel="noopener">代码包链接</a></p>
+<p>跳转后进入函数编辑状态，选择代码包上传 <a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn_aliyun.zip">代码包链接</a></p>
 <p>下载该代码包，<strong>注意这个代码和1.2中的代码不同</strong></p>
 <p>选择<strong>代码包上传</strong> -&gt; <strong>选择文件</strong> 选择刚刚下载的zip文件</p>
 <p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/云函数计算代码包上传按钮.png" alt=""></p>
@@ -255,9 +255,9 @@
 <p><code>0 0 0 * * * 代表早上8:00</code></p>
 <p><code>0 20 0 * * * 代表早上8:20</code></p>
 <p><code>0 32 20 * * * 代表早上4:32</code></p>
-<p>因为表单都是十二点多发布，大家可以时间尽量<strong>不要选择比较多的8:00</strong>这种整时，整分的时间，<strong>尽量使用</strong>诸如</p>
+<p><strong>注意！不要照抄我这个时间，需要自己修改一下，时间也尽量不要选择比较多的8:00这种整时，整分的时间，尽量使用诸如</strong></p>
 <p><code>0 31 0 * * *</code></p>
-<p><code>0 52 0 * * *</code>之类的时间来避免并发，点击确定就全部配置好了，该脚本会自动在你设定的时间尝试填表。</p>
+<p><code>0 52 0 * * *</code>之类的时间来避免并发，点击确定就全部配置好了，该脚本会自动在<strong>你设定的时间</strong>尝试填表。</p>
 <p>本文结束</p>
 
       
