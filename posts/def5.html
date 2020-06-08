@@ -15,8 +15,17 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="注意：本文只从技术上讨论自动签到的可行性，并不鼓励大家使用，且自行承担使用的后果。 本文代码较多，建议电脑观看">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2020-06-07T14:00:01.639Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云登录.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云控制台按钮.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云侧边栏按钮.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云函数计算入口.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;云函数计算代码包上传按钮.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;代码包上传保存.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;SignIn修改配置文件.png">
+<meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;保存执行按钮.png">
+<meta property="og:updated_time" content="2020-06-08T01:39:04.050Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云登录.png">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
   
@@ -210,9 +219,45 @@
 
 <p>登录接口就不放出来了</p>
 <h2 id="1-2-代码实现"><a href="#1-2-代码实现" class="headerlink" title="1.2 代码实现"></a>1.2 代码实现</h2><p>这种需求python显然更具优势，整个过程是:</p>
-<p>配置文件读取用户信息 -&gt; 尝试登陆获取cookie -&gt;  携带cookie获取待填表单信息并构造待提交信息 -&gt; 提交</p>
-<p>代码我就放在这吧，有兴趣的同学可以讨论一下，不过我只看了不到一个小时的python语法，所以代码会有些烂😸😸，，，将就些。<a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn.zip" target="_blank" rel="noopener">链接</a></p>
-<h2 id="1-3-使用方法"><a href="#1-3-使用方法" class="headerlink" title="1.3 使用方法"></a>1.3 使用方法</h2><p>可以放到阿里云<strong>函数计算</strong>来签到，这样就免去了一直挂着。我已经配置好了函数计算，但我需要确定它是有效的，所以明天再更🙈🙈。。。</p>
+<p><strong>配置文件读取用户信息</strong> -&gt; <strong>尝试登陆获取cookie</strong> -&gt;  <strong>携带cookie获取待填表单信息并构造待提交信息</strong> -&gt; <strong>提交</strong></p>
+<p>代码我就放在这吧，有兴趣的同学可以讨论一下😸😸</p>
+<p><strong>开发环境：Python 3.8</strong></p>
+<p><a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn.zip" target="_blank" rel="noopener">脚本下载链接</a></p>
+<h2 id="1-3-使用方法"><a href="#1-3-使用方法" class="headerlink" title="1.3 使用方法"></a>1.3 使用方法</h2><p><strong>1) 创建阿里云账号</strong></p>
+<p>阿里云官网：<a href="https://account.aliyun.com/login/qr_login.htm" target="_blank" rel="noopener">链接</a></p>
+<p>打开网页进入阿里云官网，阿里云可以使用<strong>支付宝</strong>或<strong>淘宝账号</strong>登录，如果提示实名认证就按照提示来。</p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/阿里云登录.png" alt=""></p>
+<p>在进入登录跳转界面后，点击<strong>控制台</strong></p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/阿里云控制台按钮.png" alt=""></p>
+<p>进入控制台后单击<strong>侧边栏 </strong></p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/阿里云侧边栏按钮.png" alt=""></p>
+<p><strong>产品与服务</strong> -&gt; <strong>函数计算 </strong></p>
+<p>单击函数计算后会提示你开通，开通就好了，如果只是挂签到，<strong>只能用的到免费额度的万分之一</strong>。</p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/阿里云函数计算入口.png" alt=""></p>
+<p><strong>新手教程可以跳过</strong>，进入函数计算的控制台界面后点击：</p>
+<p><strong>服务/函数</strong> -&gt; <strong>新建函数</strong> -&gt; <strong>下一步</strong></p>
+<p>函数名称填写<code>SignIn</code>运行环境选择<code>Python3</code>函数入口改为<code>SignIn.main</code>其他默认，点击完成</p>
+<p>跳转后进入函数编辑状态，选择代码包上传 <a href="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/code/AutoSignIn_aliyun.zip" target="_blank" rel="noopener">代码包链接</a></p>
+<p>下载该代码包，<strong>注意这个代码和1.2中的代码不同</strong></p>
+<p>选择<strong>代码包上传</strong> -&gt; <strong>选择文件</strong> 选择刚刚下载的zip文件</p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/云函数计算代码包上传按钮.png" alt=""></p>
+<p>点击保存按钮</p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/代码包上传保存.png" alt=""></p>
+<p>进入在线编辑后选择<strong>config.ini</strong>分别修改<code>user_num</code> <code>password</code> <code>address</code>为你的学号，密码和地址。</p>
+<p><img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/SignIn修改配置文件.png" alt=""></p>
+<p>编辑完成后可以单击<img src="https://qsbk-blog.oss-cn-beijing.aliyuncs.com/img/保存执行按钮.png" alt="">   按钮，如果今天没有填表，可以去今日校园查看一下是不是已经填好了。</p>
+<p>随后<strong>点击触发器选项卡</strong> -&gt; <strong>创建触发器</strong> -&gt; 服务类型选择<strong>定时触发器</strong></p>
+<p>触发器名称随便填，，我用的<code>everyDay</code>。时间配置选择<strong>Cron表达式</strong></p>
+<p><strong>填写内容需要注意一下</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x y z * * *</span><br></pre></td></tr></table></figure>
+<p>x y z 分别代表秒，分，时，因为<strong>Cron</strong>使用的是<strong>UTC时间</strong>（<strong>UTC时间+8个小时为北京时间</strong>）所以:</p>
+<p><code>0 0 0 * * * 代表早上8:00</code></p>
+<p><code>0 20 0 * * * 代表早上8:20</code></p>
+<p><code>0 32 20 * * * 代表早上4:32</code></p>
+<p>因为表单都是十二点多发布，大家可以时间尽量<strong>不要选择比较多的8:00</strong>这种整时，整分的时间，<strong>尽量使用</strong>诸如</p>
+<p><code>0 31 0 * * *</code></p>
+<p><code>0 52 0 * * *</code>之类的时间来避免高并发，点击确定就全部配置好了。</p>
+<p>本文结束</p>
 
       
 
