@@ -24,7 +24,7 @@
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;代码包上传保存.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;SignIn修改配置文件.png">
 <meta property="og:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;保存执行按钮.png">
-<meta property="og:updated_time" content="2020-06-08T13:41:09.848Z">
+<meta property="og:updated_time" content="2020-06-08T13:47:08.921Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;qsbk-blog.oss-cn-beijing.aliyuncs.com&#x2F;img&#x2F;阿里云登录.png">
   
@@ -193,7 +193,7 @@
 <li>Android版本  ≥9.0需要使用<strong>EdXposed + TrustMeAlready</strong> 来绕过第二条</li>
 </ul>
 <p>但是因为无论是<strong>Magisk</strong>还是<strong>Xposed</strong>或者<strong>EdXposed</strong>都有<strong>手机变砖的风险</strong>，不建议没有经验的同学尝试。但还有一个更简单的方法，随便下载一个主流Android模拟器，添加一个<strong>Android 5.0</strong>的模拟器就可以愉快的抓包了。</p>
-<h2 id="1-2-接口"><a href="#1-2-接口" class="headerlink" title="1.2 接口"></a>1.2 接口</h2><p>省略掉比较多且无趣的数据包的分析等操作，最终抓到了以下几个接口：</p>
+<h2 id="1-2-接口"><a href="#1-2-接口" class="headerlink" title="1.2 接口"></a>1.2 接口</h2><p>抛去比较多且无趣的数据包的分析等操作，最终抓到了以下几个接口：</p>
 <h4 id="1-查询今日待填表单"><a href="#1-查询今日待填表单" class="headerlink" title="1. 查询今日待填表单"></a><strong>1. 查询今日待填表单</strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/wec-counselor-collector-apps/stu/collector/queryCollectorProcessingList</span><br></pre></td></tr></table></figure>
 <p><strong>Post请求格式</strong></p>
 <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;<span class="attr">"pageSize"</span>:<span class="number">10</span>,<span class="attr">"pageNumber"</span>:<span class="number">1</span>&#125;</span><br></pre></td></tr></table></figure>
