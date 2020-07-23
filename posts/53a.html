@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Blog">
 <meta property="og:description" content="1.1 抽象数据类型 抽象数据类型（Abstract Data Type，ADT）是计算机科学中具有类似行为的特定类别的数据结构的数学模型；或者具有类似语义的一种或多种程序设计语言的数据类型。抽象数据类型是间接定义的，通过其上的可执行的操作以及这些操作的效果的数学约束（与可能的代价）。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:updated_time" content="2020-07-23T03:08:24.688Z">
+<meta property="og:updated_time" content="2020-07-23T03:41:55.091Z">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="Blog" type="application/atom+xml">
@@ -178,10 +178,15 @@
 <p>例如，抽象的<a href="https://zh.wikipedia.org/wiki/堆疊">堆栈</a>（stack）由3个操作定义：推入push，弹出pop（接受约束：每次弹出返回的是最新被推入且没有被弹出的数据，也就是后进先出），查看堆栈顶端数据peek。当分析使用堆栈算法的效率，所有这3个操作用时相同，无论堆栈中包含多少项数据；并且对每项数据栈使用了常量大小的存储。</p>
 <p>抽象数据类型（ADT）是纯粹理论实体，用于简化描述抽象算法，分类与评价数据结构，形式描述程序设计语言的类型系统。一个ADT可以用特定数据类型或数据结构实现，在许多程序设计语言中有许多种实现方式；或者用形式规范语言描述。ADT常实现为模块（module）：模块的接口声明了对应于ADT操作的例程（procedure），有时用注释描述了约束。</p>
 </blockquote>
-<p>引自wiki，简单来说就是ADT是用于描述数据类型的一种方式。但是这种描述是抽象的，类似于接口。例如表、集合以及与他们各自与之关联的操作一起形成的这些对象都可以被看做抽象数据类型。</p>
-<h2 id="1-2-表-ADT"><a href="#1-2-表-ADT" class="headerlink" title="1.2 表 ADT"></a>1.2 表 ADT</h2><p>表的形式类似于集合如$A_0,A_1,A_2…A_{N-1}$是一个大小为<strong>N</strong>的表。<strong>大小为0的表被称为空表(empty list)</strong></p>
+<p>引自wiki，简单来说就是<strong>ADT是用于描述数据类型的一种方式</strong>。但是这种描述是<strong>抽象</strong>的，类似于接口。例如表、集合以及与他们各自与之关联的操作一起形成的这些对象都可以被看做抽象数据类型。</p>
+<h2 id="1-2-表-ADT"><a href="#1-2-表-ADT" class="headerlink" title="1.2 表 ADT"></a>1.2 表 ADT</h2><p>表的形式类似于数学中的集合如$A_0,A_1,A_2…A_{N-1}$是一个大小为<strong>N</strong>的表。<strong>大小为0的表被称为空表(empty list)</strong></p>
 <p>对于空表外的表，我们称$A_i后继A_{i-1}(或继A_{i-1}之后，i &lt; N)并称A_{i-1}前驱A_i(i &gt; 0)$。</p>
-
+<p>除了这些定义以外还要有在表上进行操作的集合。如：<code>printList</code>，<code>makeEmpty</code>，<code>find</code> 等等常用方法这里不一一列举。</p>
+<h3 id="1-2-1-表的简单数组实现"><a href="#1-2-1-表的简单数组实现" class="headerlink" title="1.2.1 表的简单数组实现"></a>1.2.1 表的简单数组实现</h3><p>从上面表的定义中不难发现，<strong>表与数组十分相似</strong>，虽然数组创建后大小固定。但在需要时我们可以将数组扩张已解决这一问题。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] arr = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">10</span>];	<span class="comment">//创建一个长度为10的初始数组</span></span><br><span class="line">...</span><br><span class="line"><span class="comment">//以下为如何扩张该数组</span></span><br><span class="line"><span class="keyword">int</span>[] newArry = <span class="keyword">new</span> <span class="keyword">int</span>[arry.length *<span class="number">2</span>];</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; arr.length; i++)</span><br><span class="line">	newArry[i] = arr[i];</span><br><span class="line">arr = newArry</span><br></pre></td></tr></table></figure>
+<p>在数组实现的表中，打印表<code>printList</code>操作将花费<strong>线性的时间</strong>，<code>findKth</code><strong>(由key查找value方法)</strong>花费常数的时间，这样看起来效率貌似还不错，但仔细想想会发现<code>insert</code>与<code>remove</code>方法将是一个巨大的开销。在只考虑最坏的情况下，在下标0的位置插入一项，那么需要将数组中的<strong>每一个元素都向后移一个位置以空出空间</strong>，而删除一个元素也需要<strong>将所有在其之后的元素前移一个位置</strong>。因此这两种操作最坏的情况需要<strong><em>O(N)</em></strong>。当然如果你只在表的高端操作即最好的情况下填加和删除操作将只花费<strong><em>O(1)</em></strong>。。</p>
+<p>在某些情况下如<code>findKth</code>数组实现的表将有极高的效率。同样在另一种情况下，诸如<strong>需要频繁的在表前端插入与删除操作</strong>，数组的效率就变得<strong>不那么理想</strong>。这就有了另一种数据结构：<strong>链表(Linke List)</strong></p>
+<h3 id="1-2-2-简单链表"><a href="#1-2-2-简单链表" class="headerlink" title="1.2.2 简单链表"></a>1.2.2 简单链表</h3>
       
 
       
