@@ -5,3 +5,6 @@ db.json
 node_modules/
 public/
 .deploy*/
+# Obsidian 配置与本地草稿不上传
+.obsidian
+private/

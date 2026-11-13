@@ -1,0 +1,52 @@
+name: Build and publish
+
+# 源码在 source 分支，生成的网站发布到 master 分支（GitHub Pages 从 master 提供服务）
+on:
+  push:
+    branches: [source]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      TZ: Asia/Shanghai
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - run: npm ci
+
+      # 给没写全文件头的新文章补默认值（只改这次构建的临时副本）
+      - run: node tools/fill-frontmatter.mjs content/_posts
+
+      - run: npx hexo generate
+
+      - uses: actions/checkout@v4
+        with:
+          ref: master
+          path: site
+
+      - name: Publish to master
+        run: |
+          # 只新增和更新，不删除线上已有文件；不动 CNAME
+          rsync -a --exclude CNAME --exclude .git public/ site/
+          cd site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then echo "no changes"; exit 0; fi
+          git commit -q -m "Site update: ${GITHUB_SHA::7}"
+          git push origin HEAD:master

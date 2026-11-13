@@ -13,7 +13,7 @@ timezone: ''
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: https://lmyd.xyz/
+url: https://qsbk.github.io
 root: /
 permalink: posts/:abbrlink.html
 permalink_defaults:
@@ -24,7 +24,7 @@ abbrlink:
 #  trailing_index: true # Set to false to remove trailing index.html from permalinks
 
 # Directory
-source_dir: source
+source_dir: content   # Obsidian 笔记库；公开文章在 content/_posts/
 public_dir: public
 tag_dir: tags
 archive_dir: archives
@@ -89,6 +89,9 @@ pagination_dir: page
 include:
 exclude:
 ignore:
+  - '**/private/**'
+  - '**/.obsidian/**'
+  - '**/site/**'
 
 # Extensions
 ## Plugins: https://hexo.io/plugins/
@@ -97,14 +100,7 @@ theme: yilia
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: 'git'
-  repository: 
-    github: git@github.com:qsbk/qsbk.github.io.git
-    aliyun: git@59.110.241.206:/home/git/hexo.git
-  branch: master
-  #repository: git@59.110.241.206:/home/git/hexo.git
-  message:
+
 jsonContent:
     meta: false
     pages: false
